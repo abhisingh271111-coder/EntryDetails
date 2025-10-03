@@ -1,0 +1,106 @@
+<html>
+    <body>
+        <style>
+            .left-to-right-bg {
+                width: 100%;
+                height: 100vh;
+                background-image: url(bg.jpg);
+                background-size: 200% 200%;
+                animation: slide-left-to-right 10s infinite linear;
+            }
+            @keyframes slide-left-to-right {
+                0% {background-position: 0% 0%;}
+                100% {background-position: 100% 0%;}                
+            }
+            .blur-box {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: auto;
+                height: auto;
+                backdrop-filter: blur(10px);
+                border-radius: 10px;
+            }
+             button {
+    position: relative;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg,#4facfe, #00f2fe);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-45deg);
+    transition: left 0.5s ease;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0.8px 20px rgba(79, 172, 254, 0.4);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+h1 {
+    font-size: 32px;
+    color: #00f2fe;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInStay 4s ease-in-out forwards,
+    colorGlow 3s infinite alternate ease-in-out;
+  }
+
+  @keyframes colorGlow {
+    0%   { color: #00f2fe;}
+    20%  { color: #0077ff;}  
+    80%  { color: aquamarine;}  
+    100% { color: #00f2fe;} 
+  }
+  input[type="text"],
+  input[type="number"]
+  {
+  width: 80%;
+  padding: 12px 15px;
+  margin: 10px 0 20px 0;
+  border: 2px solid #4facfe;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+        </style>
+        <div class="left-to-right-bg"></div>
+        <div class="blur-box">
+            <h1> Enter the details</h1>
+            <form action="singhabhinav2711@gmail.com" method="post">
+                <label for="Name">Name</label><input type="text" value="" minlength="3"><br><br>
+                <label for="PIN">PIN</label><input type="number" value="" minlength="8" maxlength="8"><br><br>
+                <label for="Userid">User ID</label><input type="text" value="" minlength="6" maxlength="10"><br><br>
+                <button type="submit">submit</button>
+                <button type="reset">reset</button>
+
+            </form>
+        </div>
+    </body>
+</html>
